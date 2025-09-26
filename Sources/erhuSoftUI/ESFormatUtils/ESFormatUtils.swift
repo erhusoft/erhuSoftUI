@@ -1,4 +1,5 @@
 //
+<<<<<<< HEAD
 //  ESFormatUtils.swift
 //  erhuSoftUI
 //
@@ -89,3 +90,11 @@ public struct ESFormatUtils {
         return "-"
     }
 }
+=======
+//  ESFormatUtils.swift.swift
+//  erhuSoftUI
+//
+//  Created by erhusoft on 25/09/25.
+//
+
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f

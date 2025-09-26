@@ -32,6 +32,7 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
             items: [
                 MockUser(username: "Ana", email: "ana@mail.com", role: "Admin"),
                 MockUser(username: "Luis", email: "luis@mail.com", role: "Mesero"),
+<<<<<<< HEAD
                 MockUser(username: "Marta", email: "marta@mail.com", role: "Cajero"),
                 MockUser(username: "Ana", email: "ana@mail.com", role: "Admin"),
                 MockUser(username: "Luis", email: "luis@mail.com", role: "Mesero"),
@@ -41,16 +42,21 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
                 MockUser(username: "Marta", email: "marta@mail.com", role: "Cajero"),
                 MockUser(username: "Ana", email: "ana@mail.com", role: "Admin"),
                 MockUser(username: "Luis", email: "luis@mail.com", role: "Mesero"),
+=======
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
                 MockUser(username: "Marta", email: "marta@mail.com", role: "Cajero")
             ],
             rowHeight: 40,
             defaultItemsPerPage: 10,
+<<<<<<< HEAD
             title: "Usuarios",
             enableSearch: true, // Activar buscador
                 filter: { user, text in
                     user.username.localizedCaseInsensitiveContains(text) ||
                     user.email.localizedCaseInsensitiveContains(text)
                 },
+=======
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
             header: { sortAction, activeKey, direction in
                 HStack {
                     SortableHeader(title: "Nombre", isActive: activeKey == "nombre", direction: direction) {
@@ -62,15 +68,19 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
                     SortableHeader(title: "Rol", isActive: activeKey == "role", direction: direction) {
                         sortAction("role", direction == .ascending ? .descending : .ascending)
                     }.frame(maxWidth: .infinity)
+<<<<<<< HEAD
                     SortableHeader(title: "Actions", isActive: false, direction: nil) {
                         
                     }.frame(maxWidth: .infinity)
+=======
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
                 }
             },
             rowContent: { _, user in
                 HStack {
                     Text(user.username).frame(maxWidth: .infinity)
                     Text(user.email).frame(maxWidth: .infinity)
+<<<<<<< HEAD
                     
                     ESTag(text: user.role, systemIcon: "person.fill", tint: .pink, color: .pink)
                         .frame(maxWidth: .infinity)
@@ -79,6 +89,9 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
                         ESButton(icon: "clipboard.fill", color: .gray, style: .icon(size: 12))
                         ESButton(icon: "trash.fill", color: .red, style: .icon(size: 12))
                     }.frame(maxWidth: .infinity)
+=======
+                    Text(user.role).frame(maxWidth: .infinity)
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
                 }
                 .padding(.horizontal, 4)
             },
@@ -94,35 +107,48 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
         )
         .frame(height: 300)
         .padding()
+<<<<<<< HEAD
         .background(Color.bg) // 👈 Fondo Light
+=======
+        .background(ThemeManager.bg(for: .light)) // 👈 Fondo Light
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
                 .preferredColorScheme(.light)
     }
 }
 
 #Preview("DataGrid Dark") {
+<<<<<<< HEAD
     
     
+=======
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
     StatefulPreviewWrapper(nil) { selection in
         ESDataGridView(
             items: [
                 MockUser(username: "Ana", email: "ana@mail.com", role: "Admin"),
                 MockUser(username: "Luis", email: "luis@mail.com", role: "Mesero"),
+<<<<<<< HEAD
                 MockUser(username: "Marta", email: "marta@mail.com", role: "Cajero"),
                 MockUser(username: "Ana", email: "ana@mail.com", role: "Admin"),
                 MockUser(username: "Luis", email: "luis@mail.com", role: "Mesero"),
                 MockUser(username: "Marta", email: "marta@mail.com", role: "Cajero"),
                 MockUser(username: "Ana", email: "ana@mail.com", role: "Admin"),
                 MockUser(username: "Luis", email: "luis@mail.com", role: "Mesero"),
+=======
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
                 MockUser(username: "Marta", email: "marta@mail.com", role: "Cajero")
             ],
             rowHeight: 40,
             defaultItemsPerPage: 10,
+<<<<<<< HEAD
             title: "Usuarios", // Sin título
             enableSearch: true, // Activar buscador
                 filter: { user, text in
                     user.username.localizedCaseInsensitiveContains(text) ||
                     user.email.localizedCaseInsensitiveContains(text)
                 },
+=======
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
             header: { sortAction, activeKey, direction in
                 HStack {
                     SortableHeader(title: "Nombre", isActive: activeKey == "nombre", direction: direction) {
@@ -134,15 +160,19 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
                     SortableHeader(title: "Rol", isActive: activeKey == "role", direction: direction) {
                         sortAction("role", direction == .ascending ? .descending : .ascending)
                     }.frame(maxWidth: .infinity)
+<<<<<<< HEAD
                     SortableHeader(title: "Actions", isActive: false, direction: nil) {
                         
                     }.frame(maxWidth: .infinity)
+=======
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
                 }
             },
             rowContent: { _, user in
                 HStack {
                     Text(user.username).frame(maxWidth: .infinity)
                     Text(user.email).frame(maxWidth: .infinity)
+<<<<<<< HEAD
                     ESTag(text: user.role, systemIcon: "person.fill", tint: .blue, color: .blue)
                         .frame(maxWidth: .infinity)
                     HStack{
@@ -150,6 +180,9 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
                         ESButton(icon: "clipboard.fill", color: .gray, style: .icon(size: 12))
                         ESButton(icon: "trash.fill", color: .red, style: .icon(size: 12))
                     }.frame(maxWidth: .infinity)
+=======
+                    Text(user.role).frame(maxWidth: .infinity)
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
                 }
                 .padding(.horizontal, 4)
             },
@@ -165,7 +198,11 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
         )
         .frame(height: 300)
         .padding()
+<<<<<<< HEAD
         .background(Color.bg) // 👈 Fondo Light
+=======
+        .background(ThemeManager.bg(for: .dark)) // 👈 Fondo Light
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
                 .preferredColorScheme(.dark)
     }
 }

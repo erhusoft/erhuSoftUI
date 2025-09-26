@@ -3,13 +3,21 @@
 Biblioteca de componentes UI para Swift, compatible con iOS y macOS.
 
 ## Descripción
+<<<<<<< HEAD
 `erhuSoftUI` es un paquete Swift que proporciona una colección de componentes visuales reutilizables para aplicaciones iOS y macOS. Incluye botones, campos de texto, tarjetas, selectores, grids de datos, imágenes, modificadores, utilidades de formato, tags, toasts y sistema de temas.
+=======
+`erhuSoftUI` es un paquete Swift que proporciona una colección de componentes visuales reutilizables para aplicaciones iOS y macOS. Incluye botones, campos de texto, tarjetas, selectores, grids de datos, imágenes, modificadores y utilidades de formato.
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
 
 ## Instalación
 Agrega el paquete a tu proyecto Swift Package Manager:
 
 ```swift
+<<<<<<< HEAD
 .package(url: "https://github.com/erhusoft/erhuSoftUI", from: "1.0.0")
+=======
+.package(url: "<URL del repositorio>", from: "1.0.0")
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
 ```
 
 ## Uso básico
@@ -24,6 +32,7 @@ Ejemplo de uso de un botón:
 ESButton(title: "Aceptar", action: { /* acción */ })
 ```
 
+<<<<<<< HEAD
 Ejemplo de grid de datos:
 ```swift
 ESDataGridView(columns: ["Nombre", "Edad"], rows: [["Ana", "23"], ["Luis", "31"]])
@@ -67,6 +76,15 @@ La documentación detallada de cada componente se encuentra en los comentarios d
 1. Abre el proyecto en Xcode.
 2. Selecciona el esquema del paquete.
 3. Ve a Product > Build Documentation.
+=======
+## Estructura del proyecto
+- **Sources/erhuSoftUI/**: Componentes principales
+  - ESButton, ESDataGrid, ESFormatUtils, ESImage, ESModifier, ESNavLink, ESPicker, ESStepperButton, ESTag, ESTextField, ESToast
+- **Tests/erhuSoftUITests/**: Pruebas unitarias
+
+## Documentación técnica
+La documentación detallada de cada componente se encuentra en los comentarios del código fuente y puede ser generada automáticamente con DocC.
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
 
 ## Licencia
 [MIT](LICENSE)

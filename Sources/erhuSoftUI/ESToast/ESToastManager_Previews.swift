@@ -16,7 +16,11 @@ import SwiftUI
         ESToastView(toast: ESToast(type: .loading, title: "Cargando...", message: "Espere un momento"))
     }
     .padding()
+<<<<<<< HEAD
     .background(Color.bg)
+=======
+    .background(ThemeManager.bg(for: .light))
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
     .preferredColorScheme(.light)
 }
 
@@ -29,6 +33,10 @@ import SwiftUI
         ESToastView(toast: ESToast(type: .loading, title: "Cargando...", message: "Espere un momento"))
     }
     .padding()
+<<<<<<< HEAD
     .background(Color.bg)
+=======
+    .background(ThemeManager.bg(for: .dark))
+>>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
     .preferredColorScheme(.dark)
 }
