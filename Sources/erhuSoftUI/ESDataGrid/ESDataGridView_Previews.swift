@@ -4,6 +4,22 @@
 //
 //  Created by erhusoft on 25/09/25.
 //
+
+// SwiftUI Preview for ESDataGridView
+/// es una vista de cuadrícula de datos personalizable con soporte para búsqueda, ordenación y paginación.
+/// Permite mostrar listas de elementos con encabezados y contenido de filas definidos por el usuario.
+/// - Parameters:
+///  - items: Array de elementos a mostrar.
+///  - rowHeight: Altura de cada fila.
+///  - defaultItemsPerPage: Número predeterminado de elementos por página.
+///  - title: Título de la cuadrícula.
+///  - enableSearch: Habilitar barra de búsqueda.
+///  - filter: Función de filtrado personalizada.
+///  - header: Vista de encabezado personalizada con soporte de ordenación.
+///  - rowContent: Vista de contenido de fila personalizada.
+///  - sort: Función de ordenación personalizada.
+///  - selection: Binding a la selección de un elemento (opcional).
+/// - Note: Requiere iOS 15+ o macOS 12+.
 import SwiftUI
 // Modelo de prueba
 struct MockUser: Identifiable, Equatable {
@@ -32,31 +48,16 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
             items: [
                 MockUser(username: "Ana", email: "ana@mail.com", role: "Admin"),
                 MockUser(username: "Luis", email: "luis@mail.com", role: "Mesero"),
-<<<<<<< HEAD
-                MockUser(username: "Marta", email: "marta@mail.com", role: "Cajero"),
-                MockUser(username: "Ana", email: "ana@mail.com", role: "Admin"),
-                MockUser(username: "Luis", email: "luis@mail.com", role: "Mesero"),
-                MockUser(username: "Marta", email: "marta@mail.com", role: "Cajero"),
-                MockUser(username: "Ana", email: "ana@mail.com", role: "Admin"),
-                MockUser(username: "Luis", email: "luis@mail.com", role: "Mesero"),
-                MockUser(username: "Marta", email: "marta@mail.com", role: "Cajero"),
-                MockUser(username: "Ana", email: "ana@mail.com", role: "Admin"),
-                MockUser(username: "Luis", email: "luis@mail.com", role: "Mesero"),
-=======
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
                 MockUser(username: "Marta", email: "marta@mail.com", role: "Cajero")
             ],
             rowHeight: 40,
             defaultItemsPerPage: 10,
-<<<<<<< HEAD
             title: "Usuarios",
-            enableSearch: true, // Activar buscador
-                filter: { user, text in
-                    user.username.localizedCaseInsensitiveContains(text) ||
-                    user.email.localizedCaseInsensitiveContains(text)
-                },
-=======
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
+            enableSearch: true,
+            filter: { user, text in
+                user.username.localizedCaseInsensitiveContains(text) ||
+                user.email.localizedCaseInsensitiveContains(text)
+            },
             header: { sortAction, activeKey, direction in
                 HStack {
                     SortableHeader(title: "Nombre", isActive: activeKey == "nombre", direction: direction) {
@@ -68,20 +69,15 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
                     SortableHeader(title: "Rol", isActive: activeKey == "role", direction: direction) {
                         sortAction("role", direction == .ascending ? .descending : .ascending)
                     }.frame(maxWidth: .infinity)
-<<<<<<< HEAD
                     SortableHeader(title: "Actions", isActive: false, direction: nil) {
-                        
+                        // Acciones
                     }.frame(maxWidth: .infinity)
-=======
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
                 }
             },
             rowContent: { _, user in
                 HStack {
                     Text(user.username).frame(maxWidth: .infinity)
                     Text(user.email).frame(maxWidth: .infinity)
-<<<<<<< HEAD
-                    
                     ESTag(text: user.role, systemIcon: "person.fill", tint: .pink, color: .pink)
                         .frame(maxWidth: .infinity)
                     HStack{
@@ -89,9 +85,6 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
                         ESButton(icon: "clipboard.fill", color: .gray, style: .icon(size: 12))
                         ESButton(icon: "trash.fill", color: .red, style: .icon(size: 12))
                     }.frame(maxWidth: .infinity)
-=======
-                    Text(user.role).frame(maxWidth: .infinity)
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
                 }
                 .padding(.horizontal, 4)
             },
@@ -107,48 +100,27 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
         )
         .frame(height: 300)
         .padding()
-<<<<<<< HEAD
-        .background(Color.bg) // 👈 Fondo Light
-=======
-        .background(ThemeManager.bg(for: .light)) // 👈 Fondo Light
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
-                .preferredColorScheme(.light)
+        .background(Color.bg)
+        .preferredColorScheme(.light)
     }
 }
 
 #Preview("DataGrid Dark") {
-<<<<<<< HEAD
-    
-    
-=======
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
     StatefulPreviewWrapper(nil) { selection in
         ESDataGridView(
             items: [
                 MockUser(username: "Ana", email: "ana@mail.com", role: "Admin"),
                 MockUser(username: "Luis", email: "luis@mail.com", role: "Mesero"),
-<<<<<<< HEAD
-                MockUser(username: "Marta", email: "marta@mail.com", role: "Cajero"),
-                MockUser(username: "Ana", email: "ana@mail.com", role: "Admin"),
-                MockUser(username: "Luis", email: "luis@mail.com", role: "Mesero"),
-                MockUser(username: "Marta", email: "marta@mail.com", role: "Cajero"),
-                MockUser(username: "Ana", email: "ana@mail.com", role: "Admin"),
-                MockUser(username: "Luis", email: "luis@mail.com", role: "Mesero"),
-=======
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
                 MockUser(username: "Marta", email: "marta@mail.com", role: "Cajero")
             ],
             rowHeight: 40,
             defaultItemsPerPage: 10,
-<<<<<<< HEAD
-            title: "Usuarios", // Sin título
-            enableSearch: true, // Activar buscador
-                filter: { user, text in
-                    user.username.localizedCaseInsensitiveContains(text) ||
-                    user.email.localizedCaseInsensitiveContains(text)
-                },
-=======
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
+            title: "Usuarios",
+            enableSearch: true,
+            filter: { user, text in
+                user.username.localizedCaseInsensitiveContains(text) ||
+                user.email.localizedCaseInsensitiveContains(text)
+            },
             header: { sortAction, activeKey, direction in
                 HStack {
                     SortableHeader(title: "Nombre", isActive: activeKey == "nombre", direction: direction) {
@@ -160,19 +132,15 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
                     SortableHeader(title: "Rol", isActive: activeKey == "role", direction: direction) {
                         sortAction("role", direction == .ascending ? .descending : .ascending)
                     }.frame(maxWidth: .infinity)
-<<<<<<< HEAD
                     SortableHeader(title: "Actions", isActive: false, direction: nil) {
-                        
+                        // Acciones
                     }.frame(maxWidth: .infinity)
-=======
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
                 }
             },
             rowContent: { _, user in
                 HStack {
                     Text(user.username).frame(maxWidth: .infinity)
                     Text(user.email).frame(maxWidth: .infinity)
-<<<<<<< HEAD
                     ESTag(text: user.role, systemIcon: "person.fill", tint: .blue, color: .blue)
                         .frame(maxWidth: .infinity)
                     HStack{
@@ -180,9 +148,6 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
                         ESButton(icon: "clipboard.fill", color: .gray, style: .icon(size: 12))
                         ESButton(icon: "trash.fill", color: .red, style: .icon(size: 12))
                     }.frame(maxWidth: .infinity)
-=======
-                    Text(user.role).frame(maxWidth: .infinity)
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
                 }
                 .padding(.horizontal, 4)
             },
@@ -198,11 +163,7 @@ struct StatefulPreviewWrapper<Value, Content: View>: View {
         )
         .frame(height: 300)
         .padding()
-<<<<<<< HEAD
-        .background(Color.bg) // 👈 Fondo Light
-=======
-        .background(ThemeManager.bg(for: .dark)) // 👈 Fondo Light
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
-                .preferredColorScheme(.dark)
+        .background(Color.bg)
+        .preferredColorScheme(.dark)
     }
 }

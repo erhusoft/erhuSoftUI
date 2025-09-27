@@ -111,20 +111,12 @@ public struct ESMenuPicker<T: Hashable, Content: View>: View {
 ///   - width: Ancho del selector (opcional).
 public struct ESSegmentedPicker<T: Hashable, Content: View>: View {
     @Environment(\.colorScheme) private var scheme
-    /// Opción seleccionada (enlazado).
     @Binding var selection: T
-    /// Opciones disponibles.
     let options: [T]
-    /// Vista para mostrar cada opción.
     let label: (T) -> Content
-    /// Ancho del selector (opcional).
     var width: CGFloat? = nil
-    /// Inicializa un selector segmentado.
-    /// - Parameters:
-    ///   - selection: Binding a la opción seleccionada.
-    ///   - options: Array de opciones.
-    ///   - label: Vista para cada opción.
-    ///   - width: Ancho opcional.
+    @State private var isHovering = false
+
     public init(
         selection: Binding<T>,
         options: [T],
@@ -136,7 +128,7 @@ public struct ESSegmentedPicker<T: Hashable, Content: View>: View {
         self.label = label
         self.width = width
     }
-    /// Vista principal del selector segmentado.
+
     public var body: some View {
         HStack(spacing: 0) {
             ForEach(options, id: \.self) { item in
@@ -159,12 +151,12 @@ public struct ESSegmentedPicker<T: Hashable, Content: View>: View {
         .padding(4)
         .background(
             RoundedRectangle(cornerRadius: 8)
-                .fill(Color.bar)
+                .fill(isHovering ? Color.grid : Color.bar)
+                .animation(.easeInOut(duration: 0.2), value: isHovering)
         )
-        .overlay(
-            RoundedRectangle(cornerRadius: 8)
-                .stroke(Color.border, lineWidth: 0.6)
-        )
+        .onHover { hovering in
+            isHovering = hovering
+        }
         .frame(width: width)
     }
 }

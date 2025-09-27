@@ -45,34 +45,24 @@ public enum ESToastType {
     
     func primaryColor(for scheme: ColorScheme) -> Color {
         switch self {
-<<<<<<< HEAD
+
         case .success: return Color.success
         case .error:   return Color.danger
         case .info:    return Color.info
         case .warning: return Color.warning
-=======
-        case .success: return ThemeManager.success(for: scheme)
-        case .error:   return ThemeManager.danger(for: scheme)
-        case .info:    return .blue
-        case .warning: return .yellow
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
+
         case .loading: return .gray
         }
     }
     
     func backgroundColor(for scheme: ColorScheme) -> Color {
         switch self {
-<<<<<<< HEAD
+
         case .success: return Color.success.opacity(0.15)
         case .error:   return Color.danger.opacity(0.15)
         case .info:    return Color.info.opacity(0.15)
         case .warning: return Color.warning.opacity(0.15)
-=======
-        case .success: return ThemeManager.success(for: scheme).opacity(0.15)
-        case .error:   return ThemeManager.danger(for: scheme).opacity(0.15)
-        case .info:    return .blue.opacity(0.15)
-        case .warning: return .yellow.opacity(0.15)
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
+
         case .loading: return .gray.opacity(0.15)
         }
     }
@@ -113,11 +103,9 @@ public struct ESToastView: View {
                 if let message = toast.message {
                     Text(message)
                         .font(.system(size: 12, weight: .light))
-<<<<<<< HEAD
+
                         .foregroundColor(Color.textSecondary)
-=======
-                        .foregroundColor(ThemeManager.textSecondary(for: scheme))
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
+
                         .multilineTextAlignment(.leading)
                 }
             }
@@ -131,19 +119,13 @@ public struct ESToastView: View {
                 .fill(.ultraThinMaterial)
                 .background(
                     RoundedRectangle(cornerRadius: ThemeManager.cornerRadius)
-<<<<<<< HEAD
+
                         .fill(Color.grid.opacity(0.35))
                 )
                 .overlay(
                     RoundedRectangle(cornerRadius: ThemeManager.cornerRadius)
                         .stroke(Color.border, lineWidth: 0.5)
-=======
-                        .fill(ThemeManager.bg(for: scheme).opacity(0.35))
-                )
-                .overlay(
-                    RoundedRectangle(cornerRadius: ThemeManager.cornerRadius)
-                        .stroke(ThemeManager.border(for: scheme), lineWidth: 1)
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
+
                 )
         )
         .shadow(color: .black.opacity(0.1), radius: 8, x: 0, y: 4)

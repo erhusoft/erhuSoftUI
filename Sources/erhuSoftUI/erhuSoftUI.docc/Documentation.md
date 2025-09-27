@@ -26,11 +26,11 @@ ESButton(title: "Aceptar", action: { /* acción */ })
 - ``ESToastManager``
 - ``ESImage``
 - ``ESMenuPicker``
-- ``StepperButton``
+- ``ESStepperButton``
+- ``ESPickerStepper``
 - ``ESTag``
 - ``ESNavLink``
-- ``ESFormatUtils``
-- ``ESSizeModifier``
+- ``ESUtils`` 
 
 ## Generar documentación localmente
 Puedes generar y visualizar la documentación con Xcode o usando el comando:

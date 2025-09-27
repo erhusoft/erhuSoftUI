@@ -5,8 +5,8 @@ import PackageDescription
 let package = Package(
     name: "erhuSoftUI",
     platforms: [
-        .iOS(.v15),
-        .macOS(.v12)
+        .iOS(.v15), // Minimum iOS version
+        .macOS(.v12) // Minimum macOS version
     ],
     products: [
         .library(
