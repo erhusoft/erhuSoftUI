@@ -1,5 +1,4 @@
 //
-<<<<<<< HEAD
 //  ESFormatUtils.swift
 //  erhuSoftUI
 //
@@ -8,7 +7,7 @@
 
 import Foundation
 
-public struct ESFormatUtils {
+public struct ESUtils {
     
     // MARK: - Currency
     public static func formatCurrency(_ amount: Double, locale: String = "es_MX", code: String = "MXN") -> String {
@@ -90,11 +89,3 @@ public struct ESFormatUtils {
         return "-"
     }
 }
-=======
-//  ESFormatUtils.swift.swift
-//  erhuSoftUI
-//
-//  Created by erhusoft on 25/09/25.
-//
-
->>>>>>> 2751035793a4c86def7a0d48c7540d72d506ff0f
